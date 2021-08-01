@@ -1,0 +1,5 @@
+LOAD DATA LOCAL INFILE '/home/GC-content_SW_101bp.csv' 
+INTO TABLE HEMA_arabidopsis_thaliana_core.seq_region_pos_attrib_value FIELDS 
+TERMINATED BY '\t' 
+ENCLOSED BY '"' LINES 
+TERMINATED BY '\r\n' 

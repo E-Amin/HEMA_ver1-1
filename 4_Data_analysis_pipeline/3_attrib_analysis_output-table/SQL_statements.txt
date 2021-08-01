@@ -1,0 +1,34 @@
+======================================================================
+SQL statement to retrieve the metadata related to the stored profiles of GC-content property
+--------------------------
+SELECT *
+ FROM HEMA_arabidopsis_thaliana_core.attrib_type at, HEMA_arabidopsis_thaliana_core.attrib_analysis aa,
+ HEMA_arabidopsis_thaliana_core.feature_attrib_analysis faa, HEMA_arabidopsis_thaliana_core.genomic_feature gf
+ WHERE at.name='GC content' AND at.attrib_type_id=aa.attrib_type_id and
+  aa.attrib_analysis_id=faa.attrib_analysis_id AND faa.feature_id=gf.feature_id
+
+
+======================================================================
+
+SQL_statement_to_retrieve the calculated mean profile of GC-content values over 500 bp upstream and downstream of the mid-points of Exon 1 in in A. thaliana:
+--------------------------
+
+SELECT faao.`values` 
+FROM HEMA_arabidopsis_thaliana_core.feature_attrib_analysis faa, 
+ HEMA_arabidopsis_thaliana_core.feature_attrib_analysis_output faao,
+ HEMA_arabidopsis_thaliana_core.attrib_analysis aa,
+HEMA_arabidopsis_thaliana_core.attrib_type at
+ WHERE at.name='GC content' AND at.attrib_type_id=aa.attrib_type_id AND aa.`window`=101
+ AND aa.attrib_analysis_id = faa.attrib_analysis_id and
+ faa.feature_attrib_analysis_id=faao.feature_attrib_analysis_id AND
+ faa.feature_id = 'EX' AND faa.context='Centre' AND faa.data_type = 'Mean' AND faa.feature_counter=1
+
+
+======================================================================
+statement to retrieve the metadata related to the stored frequency distributions of GC-content property
+--------------------------
+SELECT *
+ FROM HEMA_arabidopsis_thaliana_core.attrib_type at, HEMA_arabidopsis_thaliana_core.attrib_analysis aa,
+ HEMA_arabidopsis_thaliana_core.attrib_frequencies af 
+ WHERE at.name='GC content' AND at.attrib_type_id=aa.attrib_type_id and
+  af.attrib_analysis_id=aa.attrib_analysis_id

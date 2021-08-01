@@ -1,0 +1,13 @@
+Read each chromosme Fasta file (DNA sequence) after trimming “N”
+create GC-content_table as matrix of two dimensional (column = 2,row = 101)
+loop for i between 0 to 100:
+	GC-content_table[i][0]= i
+Window = 501
+loop for each chromosome fasta file:
+	Length = Length of chromosome fasta file 
+	loop for i between 0 to (Length - Window):
+		Seq = get DNA seqence between i to (i+window)
+		GC_count = count the number of ‘G’ and ‘C’ in Seq 
+	%GC = (GC_count / Window)*100
+	GC-content_table[%GC][1]= GC-content_table[%GC][1] + 1  		
+Print GC-content_table

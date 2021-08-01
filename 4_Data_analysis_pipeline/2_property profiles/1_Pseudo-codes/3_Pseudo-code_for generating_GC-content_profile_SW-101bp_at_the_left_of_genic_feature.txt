@@ -1,0 +1,20 @@
+Features_list = Run SQL query to get (seq_region_pos_start, seq_region_pos_end, strand, seq_region_id) for each desirable feature (Exon#1 or Exon#2 or Intron#1)from transcript_feature table
+create GC-content_table as matrix of two dimensional (column=length(Features_list),row = 1001)
+property = GC-content
+loop for i between 0 to length(Features_list):
+	Strand = strand
+	If strand ==1:
+		Start = seq_region_pos_start - 500
+		End = seq_region_pos_start + 500
+	Else
+		Start = seq_region_pos_end - 500
+		End = seq_region_pos_end + 500		
+	pr_value_list = Run SQL query to get the property values between Start and End from  seq_region_pos and seq_region_pos_attrib_value tables and property = property
+	L = length(pr_value_list)
+		loop for j between 0 to length(pr_value_list):
+			if Strand ==1:
+				pr _table[i][j] = pr_value_list[j] 
+			Else:
+				pr_table[i][L -(j+1)] = pr_value_list[j] 
+Loop for column in pr_table:
+	calculate Mean and SD
