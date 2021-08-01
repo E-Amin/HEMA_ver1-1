@@ -1,6 +1,6 @@
 #####   Heuristic Ensembl Meta-Analysis (HEMA) ver.1  #####
 
-The Heuristic Ensembl Meta-Analysis (HEMA) platform includes data pre-processing pipeline to populate the database tables, and data analysis pipeline containing structured queries that can explore systematic questions of any calculated sequence property associated with any subset of genic features. 
+The Heuristic Ensembl Meta-Analysis platform (HEMA) represents a new user-approachable platform consisting of an adapted Ensembl database schema, data pre-processing pipeline to populate the database tables, and data analysis pipeline containing structured queries that can explore systematic questions of any calculated sequence property associated with any subset of genic features. 
 
 #####   SYSTEM REQUIREMENTS  #####
 
