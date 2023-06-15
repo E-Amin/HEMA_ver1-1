@@ -25,3 +25,7 @@ The Heuristic Ensembl Meta-Analysis platform (HEMA) represents a new user-approa
 2- The Python script for the third table “seq_region_pos_attrib_value” can generate the property value for GC-content and for 11 DNA physicochemical properties with different sliding window sizes (11 and 101). 
 
 #The fourth folder (4_Data_analysis_pipeline) contains Pseudo-codes and Python script that can be used to calculated the frequency distribution and the profiles of different properties.
+
+#### GUI ######
+
+The file "5_Visual_studio_GUI_C-sharp.zip" is considered as a data access layer was written using Visual C#.Net (.NET Core 3.1, C# 8.0). The GUI has been developed using MS Visual Studio (Community 2019) in order to demonstrate the benefits of HEMA system via a MS Windows form application.
